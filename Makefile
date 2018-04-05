@@ -1,3 +1,8 @@
+all:
+	echo Hello.
+# register:
+#	./setup.py register -r yaplotlib
+# edit ~/.pypirc
 check:
 	./setup.py check
 install: check
