@@ -4,6 +4,7 @@ __version__ = "0.1.3"
 
 import colorsys
 
+
 def plaintext(a):
     s = ""
     for x in a:
@@ -29,7 +30,7 @@ def Arrow(v0,v1):
 
 
 def Polygon(vertices):
-    s = f"p {len(vertices} "
+    s = f"p {len(vertices)} "
     for v in vertices:
         s += plaintext(v)
     return s + "\n"
@@ -134,8 +135,10 @@ class Yaplot():
             self.s += ArrowType(arrowtype)
             self.arrowtype = arrowtype
     def Line(self, a, b, layer=-1, color=-1):
-        self.s += self.Layer(layer)
-        self.s += self.Color(color)
+        if layer > 0:
+            self.s += self.Layer(layer)
+        if color >= 0:
+            self.s += self.Color(color)
         self.s += Line(a, b)
     def Arrow(self, a, b, layer=-1, color=-1, size=-1, arrowtype=-1):
         self.s += self.Layer(layer)
@@ -153,11 +156,11 @@ class Yaplot():
     def SetPalette(self, x, R, G=None, B=None, maxval=255):
         self.s += SetPalette(x, R, G, B, maxval)
     def GradationPalettes(self, N, color, color1=None, offset=10, maxval=255):
-        self.s += GradationPalettes(N, color, color1, offset, maxval):
+        self.s += GradationPalettes(N, color, color1, offset, maxval)
     def RandomPalettes(self, N, offset=10):
-        self.s += RandomPalettes(N, offset):
+        self.s += RandomPalettes(N, offset)
     def RainbowPalettes(self, N, offset=10):
-        self.s += RainbowPalettes(N, offset):
+        self.s += RainbowPalettes(N, offset)
     def NewPage(self):
         self.s += NewPage()
         self.layer = 1
