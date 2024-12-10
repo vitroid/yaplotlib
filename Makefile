@@ -1,18 +1,23 @@
+PKGNAME=yaplotlib
+
 all:
 	echo Hello.
-# register:
-#	./setup.py register -r yaplotlib
-# edit ~/.pypirc
+
+
+test-deploy:
+	poetry publish --build -r testpypi
+test-install:
+	pip install --index-url https://test.pypi.org/simple/ $(PKGNAME)
+uninstall:
+	-pip uninstall -y $(PKGNAME)
+build: README.md
+	poetry build
+deploy:
+	poetry publish --build
 check:
-	./setup.py check
-install: check
-	./setup.py install
-pypi: check
-	./setup.py sdist bdist_wheel upload
-build.:
-	-rm *.so
-	-rm -rf build
-	python setup.py build_ext --inplace
+	poetry check
+
+
 clean:
 	-rm *~ 
 	-rm -rf build dist *.egg-info
