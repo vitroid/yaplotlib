@@ -4,6 +4,7 @@ __version__ = "0.1.3"
 
 import colorsys
 
+
 def plaintext(a):
     s = ""
     for x in a:
@@ -134,8 +135,10 @@ class Yaplot():
             self.s += ArrowType(arrowtype)
             self.arrowtype = arrowtype
     def Line(self, a, b, layer=-1, color=-1):
-        self.s += self.Layer(layer)
-        self.s += self.Color(color)
+        if layer > 0:
+            self.s += self.Layer(layer)
+        if color >= 0:
+            self.s += self.Color(color)
         self.s += Line(a, b)
     def Arrow(self, a, b, layer=-1, color=-1, size=-1, arrowtype=-1):
         self.s += self.Layer(layer)
