@@ -18,6 +18,9 @@ check:
 	poetry check
 
 
+docs:
+	pdoc -o docs yaplotlib
+
 clean:
-	-rm *~ 
-	-rm -rf build dist *.egg-info
+	-rm *~
+	-rm -rf build dist *.egg-info docs
