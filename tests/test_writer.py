@@ -48,6 +48,12 @@ def test_global_defaults_apply_to_every_frame() -> None:
     )
 
 
+def test_global_center_has_no_arguments() -> None:
+    doc = YaplotDocument()
+    doc.globals.center = True
+    assert doc.dumps() == "global\ncenter\n\n"
+
+
 def test_ui_settings_and_message() -> None:
     doc = YaplotDocument()
     g = doc.globals

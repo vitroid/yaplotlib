@@ -12,6 +12,7 @@ class Globals:
 
     何も設定していなければ、global ブロック自体を出力しない。
     ここに置いた SVG はすべてのフレームに重ねて表示される。
+    ``center`` を真にすると、引数のない ``center`` を出し、最初のフレームで中央表示にする。
     """
 
     layer: Optional[int] = None
@@ -28,6 +29,7 @@ class Globals:
     fps: Optional[float] = None
     hide: tuple[int, ...] = ()
     show: tuple[int, ...] = ()
+    center: bool = False
     messages: list[str] = field(default_factory=list)
     svgs: list[Svg] = field(default_factory=list)
 
@@ -57,6 +59,7 @@ class Globals:
             and self.fps is None
             and not self.hide
             and not self.show
+            and not self.center
             and not self.messages
             and not self.svgs
         )

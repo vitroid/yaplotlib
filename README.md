@@ -44,7 +44,7 @@ doc.save("movie.yap")
 `doc.globals` に置いた値は、すべてのフレームの初期状態になります。何も設定しなければ `global` ブロックは出力しません。
 
 - 見た目: `layer`, `color`, `radius`, `arrow`, `palettes`
-- 表示の初期状態: `reality`（0..4）, `splat`（0..3）, `fov`, `verbose`（0..3）, `thickness`, `rotation`（1〜3 個の数値）, `fps`, `hide`, `show`, `messages`
+- 表示の初期状態: `reality`（0..4）, `splat`（0..3）, `fov`, `verbose`（0..3）, `thickness`, `rotation`（1〜3 個の数値）, `fps`, `hide`, `show`, `center`（最初のフレームで中央表示）, `messages`
 - 全フレーム共通の SVG: `add_svg`
 
 ```python

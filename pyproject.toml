@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "yaplotlib"
-version = "1.0.0"
+version = "1.0.1"
 description = "A tiny library to generate Yaplot file."
 authors = ["vitroid <vitroid@gmail.com>"]
 license = "MIT"

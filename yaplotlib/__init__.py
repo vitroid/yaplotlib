@@ -1,7 +1,7 @@
 """Yaplot 形式の描画データを作る。"""
 
 # even: stable; odd: develop
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 from .core import (
     Arrow,

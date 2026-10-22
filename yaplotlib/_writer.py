@@ -280,6 +280,8 @@ def render_globals(defaults: Globals) -> str:
         lines.append("hide " + _layers("hide", defaults.hide) + "\n")
     if defaults.show:
         lines.append("show " + _layers("show", defaults.show) + "\n")
+    if defaults.center:
+        lines.append("center\n")
     for message in defaults.messages:
         if not isinstance(message, str):
             raise TypeError("message は文字列にしてください")
