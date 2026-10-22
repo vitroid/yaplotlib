@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "yaplotlib"
-version = "0.1.3"
+version = "1.0.0"
 description = "A tiny library to generate Yaplot file."
 authors = ["vitroid <vitroid@gmail.com>"]
 license = "MIT"
@@ -8,9 +8,16 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+numpy = ">=1.24"
 
 [tool.poetry.group.dev.dependencies]
 pdoc = "^15.0"
+pytest = ">=8"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = ["always::DeprecationWarning"]
 
 [build-system]
 requires = ["poetry-core"]

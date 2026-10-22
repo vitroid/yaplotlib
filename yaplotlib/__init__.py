@@ -1,27 +1,49 @@
-"""Public package interface for yaplotlib."""
+"""Yaplot 形式の描画データを作る。"""
 
 # even: stable; odd: develop
-__version__ = "0.1.3"
+__version__ = "1.0.0"
 
 from .core import (
-    Line,
-    Text,
-    Circle,
     Arrow,
-    Polygon,
+    ArrowType,
+    Circle,
     Color,
+    Layer,
+    Line,
+    NewPage,
+    Polygon,
     SetPalette,
     Size,
-    Layer,
-    ArrowType,
-    NewPage,
+    Text,
 )
-from .palettes import RandomPalettes, RainbowPalettes, GradationPalettes
-from .frame import YaplotFrame, Yaplot
 from .document import YaplotDocument
+from .elements import Batch, PaletteDef, Primitive, Svg
+from .frame import Yaplot, YaplotFrame
+from .globals import Globals
+from .palettes import (
+    GradationPalettes,
+    RainbowPalettes,
+    RandomPalettes,
+    gradation_colors,
+    rainbow_colors,
+    random_colors,
+)
+from .spec import Kind
 
 __all__ = [
     "__version__",
+    "Kind",
+    "Primitive",
+    "Batch",
+    "PaletteDef",
+    "Svg",
+    "Globals",
+    "YaplotFrame",
+    "Yaplot",
+    "YaplotDocument",
+    "random_colors",
+    "rainbow_colors",
+    "gradation_colors",
     "Line",
     "Text",
     "Circle",
@@ -36,7 +58,4 @@ __all__ = [
     "RandomPalettes",
     "RainbowPalettes",
     "GradationPalettes",
-    "YaplotFrame",
-    "Yaplot",
-    "YaplotDocument",
 ]
